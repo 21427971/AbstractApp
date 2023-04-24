@@ -17,23 +17,27 @@ namespace AbstractApp
         private int Length;
         private int Width;
 
-        public Rectangle(int ar=0,int ba=0)
+        public Rectangle(int A=0,int B=0)
         {
-            Length = ar;
-            Width = ba;
+            Length = A;
+            Width = B;
         }
         public override int Area()
         {
-            Console.WriteLine("Rectangle class area :");
+            Console.WriteLine("The area of a rectangle is :");
+            Console.WriteLine("Enter a length");
+            Length = int.Parse(Console.ReadLine());//prompt the user to enter the length and width
+            Console.WriteLine("Enter a width");
+            Width = int.Parse(Console.ReadLine());
             return (Length * Width);
         }
-        class RectangleTester
+        class CallRectangle
         {
             static void Main(string[] args)
             {
-                Rectangle r = new Rectangle(10, 7);
-                double a = r.Area();
-                Console.WriteLine($"Area is {a}");
+                Rectangle obj = new Rectangle();
+                double a = obj.Area();
+                Console.WriteLine($"The area is {a}");
                 Console.ReadKey();
             }
         }
